@@ -89,6 +89,16 @@ Task("Pack")
                 },
                 new NuSpecContent
                 {
+                    Source = "net452/Cake.Minio.dll",
+                    Target = "lib/net452"
+                },
+                new NuSpecContent
+                {
+                    Source = "net452/Cake.Minio.xml",
+                    Target = "lib/net452"
+                },
+                new NuSpecContent
+                {
                     Source = "net46/Cake.Minio.dll",
                     Target = "lib/net46"
                 },
@@ -96,6 +106,44 @@ Task("Pack")
                 {
                     Source = "net46/Cake.Minio.xml",
                     Target = "lib/net46"
+                }
+            },
+            Dependencies = new [] {
+                new NuSpecDependency
+                {
+                    Id = "Cake.Core",
+                    TargetFramework = "netstandard1.6",
+                    Version = "0.22.0"
+                },
+                new NuSpecDependency
+                {
+                    Id = "Cake.Core",
+                    TargetFramework = "net452",
+                    Version = "0.21.1"
+                },
+                new NuSpecDependency
+                {
+                    Id = "Cake.Core",
+                    TargetFramework = "net46",
+                    Version = "0.22.0"
+                },
+                new NuSpecDependency
+                {
+                    Id = "Minio.NetCore",
+                    TargetFramework = "netstandard1.6",
+                    Version = "1.0.7"
+                },
+                new NuSpecDependency
+                {
+                    Id = "Minio",
+                    TargetFramework = "net452",
+                    Version = "1.0.7"
+                },
+                new NuSpecDependency
+                {
+                    Id = "Minio",
+                    TargetFramework = "net46",
+                    Version = "1.0.7"
                 }
             },
             BasePath = "./src/Cake.Minio/bin/release",
