@@ -99,12 +99,42 @@ Task("Pack")
                 },
                 new NuSpecContent
                 {
+                    Source = "net452/Minio.dll",
+                    Target = "lib/net452"
+                },
+                new NuSpecContent
+                {
+                    Source = "net452/Newtonsoft.Json.dll",
+                    Target = "lib/net452"
+                },
+                new NuSpecContent
+                {
+                    Source = "net452/RestSharp.dll",
+                    Target = "lib/net452"
+                },
+                new NuSpecContent
+                {
                     Source = "net46/Cake.Minio.dll",
                     Target = "lib/net46"
                 },
                 new NuSpecContent
                 {
                     Source = "net46/Cake.Minio.xml",
+                    Target = "lib/net46"
+                },
+                new NuSpecContent
+                {
+                    Source = "net46/Minio.dll",
+                    Target = "lib/net46"
+                },
+                new NuSpecContent
+                {
+                    Source = "net46/Newtonsoft.Json.dll",
+                    Target = "lib/net46"
+                },
+                new NuSpecContent
+                {
+                    Source = "net46/RestSharp.dll",
                     Target = "lib/net46"
                 }
             },
