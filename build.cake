@@ -114,6 +114,31 @@ Task("Pack")
                 },
                 new NuSpecContent
                 {
+                    Source = "net452/System.Reactive.Core.dll",
+                    Target = "lib/net452"
+                },
+                new NuSpecContent
+                {
+                    Source = "net452/System.Reactive.Interfaces.dll",
+                    Target = "lib/net452"
+                },
+                new NuSpecContent
+                {
+                    Source = "net452/System.Reactive.Linq.dll",
+                    Target = "lib/net452"
+                },
+                new NuSpecContent
+                {
+                    Source = "net452/System.Reactive.PlatformServices.dll",
+                    Target = "lib/net452"
+                },
+                new NuSpecContent
+                {
+                    Source = "net452/System.Reactive.Windows.Threading.dll",
+                    Target = "lib/net452"
+                },
+                new NuSpecContent
+                {
                     Source = "net46/Cake.Minio.dll",
                     Target = "lib/net46"
                 },
@@ -135,6 +160,31 @@ Task("Pack")
                 new NuSpecContent
                 {
                     Source = "net46/RestSharp.dll",
+                    Target = "lib/net46"
+                },
+                new NuSpecContent
+                {
+                    Source = "net46/System.Reactive.Core.dll",
+                    Target = "lib/net46"
+                },
+                new NuSpecContent
+                {
+                    Source = "net46/System.Reactive.Interfaces.dll",
+                    Target = "lib/net46"
+                },
+                new NuSpecContent
+                {
+                    Source = "net46/System.Reactive.Linq.dll",
+                    Target = "lib/net46"
+                },
+                new NuSpecContent
+                {
+                    Source = "net46/System.Reactive.PlatformServices.dll",
+                    Target = "lib/net46"
+                },
+                new NuSpecContent
+                {
+                    Source = "net46/System.Reactive.Windows.Threading.dll",
                     Target = "lib/net46"
                 }
             },
