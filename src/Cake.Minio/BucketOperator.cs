@@ -8,24 +8,22 @@ namespace Cake.Minio
     public class BucketOperator
     {
         private readonly ICakeLog logger;
-        private readonly MinioClient minio;
+        private readonly IBucketOperations minio;
         private readonly string bucketName;
         private readonly string region;
-        private readonly string prefix;
-        private readonly bool recursive;
 
         public BucketOperator(
             ICakeLog logger,
-            MinioClient minio)
+            IBucketOperations minio)
             : this(logger, minio, new MinioBucketSettings())
         {
         }
 
         public BucketOperator(
             ICakeLog logger,
-            MinioClient minio,
+            IBucketOperations minio,
             MinioBucketSettings settings)
-            : this(logger, minio, settings.BucketName, settings.Region, settings.Prefix, settings.Recursive)
+            : this(logger, minio, settings.BucketName, settings.Region)
         {
             if (settings == null)
             {
@@ -33,14 +31,12 @@ namespace Cake.Minio
             }
         }
 
-        public BucketOperator(ICakeLog logger, MinioClient minio, string bucketName, string region, string prefix, bool recursive)
+        public BucketOperator(ICakeLog logger, IBucketOperations minio, string bucketName, string region)
         {
             this.logger = logger;
             this.minio = minio;
             this.bucketName = bucketName;
             this.region = region;
-            this.prefix = prefix;
-            this.recursive = recursive;
         }
 
         public void ListBuckets()
@@ -62,10 +58,10 @@ namespace Cake.Minio
             }
         }
 
-        public HasBucketOperations CheckBucket()
+        public IBucket CheckBucket()
         {
             if (Found())
-                return new FoundBucket(logger, minio, bucketName, region, prefix, recursive);
+                return new FoundBucket(logger, minio, bucketName);
             return new NotFoundBucket(logger, minio, bucketName, region);
         }
 

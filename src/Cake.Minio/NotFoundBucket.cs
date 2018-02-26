@@ -3,7 +3,7 @@ using Minio;
 
 namespace Cake.Minio
 {
-    public class NotFoundBucket : HasBucketOperations
+    public class NotFoundBucket : IBucket
     {
         private readonly ICakeLog logger;
         private readonly IBucketOperations minio;
@@ -28,16 +28,6 @@ namespace Cake.Minio
         public void RemoveBucket()
         {
             logger.Warning(string.Format("Bucket {0} does not exist. Remove operation cancelled!", bucketName));
-        }
-
-        public void ListObjects()
-        {
-            logger.Warning(string.Format("Bucket {0} does not exist. List objects operation cancelled!", bucketName));
-        }
-
-        public void ListIncompleteUploads()
-        {
-            logger.Warning(string.Format("Bucket {0} does not exist. List incomplete uploads operation cancelled!", bucketName));
         }
     }
 }
